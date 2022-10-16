@@ -17,6 +17,34 @@ export class MovieView extends React.Component {
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
+        <div className="movie-genres">
+          <span className="label">Genres: </span>
+          <span className="value">{movie.Genres + " "}</span>
+        </div>
+        <div className="movie-director">
+          <span className="label">Director: </span>
+          <span className="value">{movie.Director + " "}</span>
+        </div>
+        <div className="movie-writers">
+          <span className="label">Writers: </span>
+          <span className="value">{movie.Writers + " "}</span>
+        </div>
+        <div className="movie-topactors">
+          <span className="label">Stars: </span>
+          <span className="value">{movie.TopActors + ""}</span>
+        </div>
+        <div className="movie-rating">
+          <span className="label">Parental Guide: </span>
+          <span className="value">{movie.Rating}</span>
+        </div>
+        <div className="movie-runtime">
+          <span className="label">Runtime: </span>
+          <span className="value">{movie.Runtime}</span>
+        </div>
+        <div className="movie-releaseyear">
+          <span className="label">Year of Released: </span>
+          <span className="value">{movie.ReleaseYear}</span>
+        </div>
         <button
           onClick={() => {
             onBackClick(null);
