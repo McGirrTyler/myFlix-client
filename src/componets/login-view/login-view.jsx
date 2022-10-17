@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../login-view/login-view.scss";
+//import "../login-view/login-view.scss";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -14,7 +14,7 @@ export function LoginView(props) {
   return (
     <form className="logIn-Form">
       <label>
-        Username: <space></space>
+        Username:
         <input
           type="text"
           placeholder="Enter Username"
@@ -25,7 +25,7 @@ export function LoginView(props) {
       <br />
       <br />
       <label>
-        Password: <space></space>  
+        Password: 
         <input
           type="password"
           placeholder="Enter Password"
