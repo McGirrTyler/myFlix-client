@@ -1,65 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
+import axios from "axios";
+import { Form, Button } from 'react-bootstrap';
 
-export function registrationView(props) {
+export function RegistrationView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [birthdate, setBirthdate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthdate);
-    props.onUserRegister(username, password); //create onUserRegister
-  };
+    axios.post('https://movieverseapi.herokuapp.com/users', {
+      Username: username,
+      Password: password,
+      Email: email
+  })
+  .then(response => {
+    const data =response.data;
+    console.log(data);
+    window.open('/', '_self');
+    // _self makes page open within current page
+  })
+  .catch(err => {
+    console.log('Error registering the user');
+    alert('Something wasn\'t entered right.');
+  })
+};
 
-  return (
-    <form>
-      <label>
-        Create Username:
-        <input
-          type="text"
-          placeholder="Create a username..."
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <label>
-        Create Password:
-        <input
-          type="password"
-          placeholder="Create a password..."
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <label>
-        Enter Email:
-        <input
-          type="email"
-          palceholder="Please enter a valid email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <label>
-        <input
-          type="date"
-          placeholder="Please enter your birthdate."
-          value={birthdate}
-          onChange={(e) => setBirthdate(e.target.value)}
-        />
-      </label>
-      <br />
-      <br />
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
-  );
+return (
+  <>
+   <Container>
+    <Row>
+      <Col>
+      </Col>
+    </Row>
+   </Container>
+  </>
+);
 }
