@@ -3,9 +3,7 @@ import axios from "axios";
 import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import { Container } from "react-bootstrap/Container";
-import { Col } from "react-bootstrap/Col";
-import { Row } from "react-bootstrap/Row";
+import { Container, Row, Column } from "react-bootstrap";
 
 //import "./main-view.scss";
 
@@ -56,17 +54,17 @@ export class MainView extends React.Component {
       <Container>
         <Row className="main-view justify-content-md-center">
           {selectedMovie ? (
-            <Col md={8}>
+            <Column md={8}>
               <MovieView
                 movie={selectedMovie}
                 onBackClick={(newSelectedMovie) => {
                   this.setSelectedMovie(newSelectedMovie);
                 }}
               />
-            </Col>
+            </Column>
           ) : (
             movies.map((movie) => (
-              <Col md={3}>
+              <Column md={3}>
                 <MovieCard
                   key={movie._id}
                   movie={movie}
@@ -74,7 +72,7 @@ export class MainView extends React.Component {
                     this.setSelectedMovie(newSelectedMovie);
                   }}
                 />
-              </Col>
+              </Column>
             ))
           )}
         </Row>

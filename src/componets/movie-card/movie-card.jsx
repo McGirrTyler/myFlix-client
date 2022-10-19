@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
         </Card.Body>
       </Card>
     );
-  }
+  
 
   // return (
   // <div onClick={() => onMovieClick(movie)} className="movie-card">
@@ -30,7 +30,7 @@ export class MovieCard extends React.Component {
   //}
   //}
 
-  /* MovieCard.propTypes = {
+    MovieCard.propTypes = {
       movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
@@ -44,6 +44,6 @@ export class MovieCard extends React.Component {
         ImagePath: PropTypes.string.isRequired,
       }).isRequired,
       onMovieClick: PropTypes.func.isRequired,
-    };
-    */
+    }
+  }
 }
