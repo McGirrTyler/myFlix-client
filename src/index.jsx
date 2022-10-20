@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { MainView } from "./componets/main-view/main-view";
 import { Container } from "react-bootstrap";
 import { Navigation } from "./componets/navbar/navbar-model";
@@ -28,4 +29,5 @@ class MyFlixApplication extends React.Component {
 const container = document.getElementsByClassName("app-container")[0];
 
 //Render app in root DOM element
-ReactDOM.render(React.createElement(MyFlixApplication), container);
+const root = createRoot("container");
+root.render(React.createElement(MyFlixApplication));
