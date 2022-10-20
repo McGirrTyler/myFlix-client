@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { MainView } from "./componets/main-view/main-view";
 import { Container } from "react-bootstrap";
+import { Navigation } from "./componets/navbar/navbar-model";
 
 // Bundle
 //import "./index.scss";
@@ -10,9 +11,15 @@ import { Container } from "react-bootstrap";
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <Container>
-        <MainView />
-      </Container>
+      <>
+        <Container>
+          <Navigation />
+        </Container>
+        ;
+        <Container>
+          <MainView />
+        </Container>
+      </>
     );
   }
 }

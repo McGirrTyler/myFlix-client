@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { RegistrationView } from "../registration-view/user-registration";
+import { NavLink } from "react-bootstrap";
 
 //import "../login-view/login-view.scss";
 
@@ -22,7 +23,7 @@ export function LoginView(props) {
 
   return (
     <>
-      <Container>
+      <Container style={{ width: 500 }}>
         <Row>
           <Col>
             <CardGroup>
@@ -32,11 +33,7 @@ export function LoginView(props) {
                     <h1> Login </h1>
                   </Card.Title>
                   <Card.Subtitle style={{ textAlign: "center" }}>
-                    <p>
-                      {" "}
-                      Don't have an account with us yet? Sign up here{" "}
-                      <button>{<RegistrationView />}</button>
-                    </p>
+                    <p> Don't have an account with us yet? Sign up <NavLink src={<RegistrationView/>}>here</NavLink></p>
                   </Card.Subtitle>
                   <Form>
                     <Form.Group controlId="formUsername">

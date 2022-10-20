@@ -9,12 +9,12 @@ export class MovieCard extends React.Component {
 
     return (
       <>
-        <Card style={{ width: "15rem" }}>
-          <Card.Img variant="top" src={movie.ImagePath} />
+        <Card style={{ width: "15rem"}}>
+          <Card.Img crossorigin="anonymous" variant="top" src={movie.ImagePath} />
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>
             <Card.Subtitle>{[movie.Rating, movie.ReleaseYear]}</Card.Subtitle>
-            <Card.Text>{movie.Description}</Card.Text>
+            <Card.Text>{movie.Description }</Card.Text>
             <Button onClick={() => onMovieClick(movie)} variant="link">
               Open
             </Button>
