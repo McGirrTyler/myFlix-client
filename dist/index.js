@@ -25322,13 +25322,13 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     componentDidMount() {
-        let accessToken = localStorage.getItem('token');
-        if (accessToken !== null) {
+        _axiosDefault.default.get("https://movieverseapi.herokuapp.com/movies").then((response)=>{
             this.setState({
-                user: localStorage.getItem('user')
+                movies: response.data
             });
-            this.getMovies(accessToken);
-        }
+        }).catch((err)=>{
+            console.log(err);
+        });
     }
     setSelectedMovie(newSelectedMovie) {
         this.setState({
@@ -25364,7 +25364,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/componets/main-view/main-view.jsx",
-                lineNumber: 65
+                lineNumber: 68
             },
             __self: this
         })); //LogiView
@@ -25372,7 +25372,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/componets/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 70
             },
             __self: this
         }));
@@ -25382,21 +25382,21 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/componets/main-view/main-view.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/componets/main-view/main-view.jsx",
-                    lineNumber: 71
+                    lineNumber: 74
                 },
                 __self: this,
                 children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     md: 8,
                     __source: {
                         fileName: "src/componets/main-view/main-view.jsx",
-                        lineNumber: 73
+                        lineNumber: 76
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25406,7 +25406,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 74
+                            lineNumber: 77
                         },
                         __self: this
                     })
@@ -25414,7 +25414,7 @@ class MainView extends _reactDefault.default.Component {
                         md: 3,
                         __source: {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 83
+                            lineNumber: 86
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25424,7 +25424,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/componets/main-view/main-view.jsx",
-                                lineNumber: 84
+                                lineNumber: 87
                             },
                             __self: this
                         })
@@ -45292,4 +45292,4 @@ class Navigation extends _reactDefault.default.Component {
 }
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Nav":"io07g","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Button":"9CzHT","react-bootstrap/Form":"5ykgY","@parcel/transformer-js/src/esmodule-helpers.js":"5M5AI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6jMDx"}]},["iKuRr","8pB6M","dLPEP"], "dLPEP", "parcelRequireaec4")
 
-//# sourceMappingURL=index.6701a6e1.js.map
+//# sourceMappingURL=index.js.map
