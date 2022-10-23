@@ -28,7 +28,6 @@ export function RegistrationView(props) {
 };
 
 return (
-  <>
    <Container>
     <Row>
       <Col>
@@ -36,6 +35,5 @@ return (
       </Col>
     </Row>
    </Container>
-  </>
 );
 }

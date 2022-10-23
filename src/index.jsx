@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"
 import { MainView } from "./componets/main-view/main-view";
 import { Container } from "react-bootstrap";
 import { Navigation } from "./componets/navbar/navbar-model";
@@ -16,11 +16,10 @@ class MyFlixApplication extends React.Component {
         <Container>
           <Navigation />
         </Container>
-        ;
         <Container>
           <MainView />
         </Container>
-      </>
+        </>
     );
   }
 }
