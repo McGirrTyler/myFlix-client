@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export class MovieView extends React.Component {
   render() {
@@ -22,8 +23,12 @@ export class MovieView extends React.Component {
           <span className="value">{movie.Description}</span>
         </div>
         <div className="movie-genres">
+      <Link to={`/genres/${Genres._id}`}>
+        <Button variant="link">
           <span className="label">Genres: </span>
           <span className="value">{movie.Genres + " "}</span>
+          </Button>
+          </Link>
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>

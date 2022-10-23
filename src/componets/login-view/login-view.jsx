@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { RegistrationView } from "../registration-view/user-registration";
-import { NavLink } from "react-bootstrap";
+import { Link } from "react-bootstrap";
 
 //import "../login-view/login-view.scss";
 
@@ -45,7 +45,10 @@ export function LoginView(props) {
                 <Card.Subtitle style={{ textAlign: "center" }}>
                   <p>
                     {" "}
-                    Don't have an account with us yet? Sign up{" "} Here
+                    Don't have an account with us yet? Sign up{" "}
+                    <Link to={"../registration-view/user-registration"}>
+                      <Button variant="link"> Here </Button>
+                    </Link>
                   </p>
                 </Card.Subtitle>
                 <Form>
