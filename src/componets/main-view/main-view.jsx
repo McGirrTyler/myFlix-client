@@ -86,7 +86,7 @@ export class MainView extends React.Component {
   render() {
     const { movies, user } = this.state;
 
-    if (!user)
+    if (!user) {
       return (
         <Row>
           <Col>
@@ -94,57 +94,66 @@ export class MainView extends React.Component {
           </Col>
         </Row>
       );
+    }
+
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-      <Router>
-        <Row className="main-view justify-content-md-center">
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ));
-            }}
-          />
-          <Route
-            path="/movies/:movieId"
-            render={({ match }) => {
-              return (
-                <Col md={8}>
-                  <MovieView
-                    movie={movies.find((m) => m._id === match.params.movieId)}
-                  />
-                </Col>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/genres/:Genres"
-            render={({ match }) => {
-              if (movies.length === 0) return <div className="main-view" />;
-              return (
-                <Col md={8}>
-                  <GenreView
-                    genre={movies.find((m) => m.Genres === match.params.Genres)}
-                  />
-                </Col>
-              );
-            }}
-          />
-          <Route exact path="/register"
-          render={
-              <div>
-            <RegistrationView/>
-            </div>
-          }
-          />
-        </Row>
-      </Router>
+      <>
+        <button onClick={() => { this.onLoggedOut() }}>Logout</button>
+        <Router>
+          <Row className="main-view justify-content-md-center">
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return movies.map((m) => (
+                  <Col md={3} key={m._id}>
+                    <MovieCard movie={m} />
+                  </Col>
+                ));
+              }}
+            />
+            <Route
+              path="/movies/:movieId"
+              render={({ match }) => {
+                return (
+                  <Col md={8}>
+                    <MovieView
+                      movie={movies.find((m) => m._id === match.params.movieId)}
+                    />
+                  </Col>
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/genres/:Genres"
+              render={({ match }) => {
+                if (movies.length === 0) return <div className="main-view" />;
+                return (
+                  <Col md={8}>
+                    <GenreView
+                      genre={movies.find(
+                        (m) => m.Genres === match.params.Genres
+                      )}
+                    />
+                  </Col>
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/register"
+              render={
+                <div>
+                  <RegistrationView />
+                </div>
+              }
+            />
+          </Row>
+        </Router>
+      </>
     );
   }
 }

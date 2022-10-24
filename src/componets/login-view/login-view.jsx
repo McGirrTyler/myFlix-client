@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col";
 import { RegistrationView } from "../registration-view/user-registration";
 import { Link } from "react-bootstrap";
 import { Router } from "react-router-dom";
+import { MainView } from "../main-view/main-view";
 
 //import "../login-view/login-view.scss";
 
