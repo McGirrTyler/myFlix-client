@@ -1,16 +1,16 @@
-import React from "react";
+/* import React from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { Container, Row, Col } from "react-bootstrap";
-import { RegistrationView } from "../registration-view/user-registration";
-import { GenreView } from "../genre-view/genre-view";
+import { LoginView } from "../login-view/login-view";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+*/
 
-//import "./main-view.scss";
-
-export class MainView extends React.Component {
+/* export class GenreView extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,7 +22,7 @@ export class MainView extends React.Component {
 
   getMovies(token) {
     axios
-      .get("https://movieverseapi.herokuapp.com/movies", {
+      .get("https://movieverseapi.herokuapp.com/movies/genres/:Genres", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -37,7 +37,7 @@ export class MainView extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://movieverseapi.herokuapp.com/movies")
+      .get("https://movieverseapi.herokuapp.com/movies/genres/:Genres")
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -97,54 +97,8 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-      <Router>
-        <Row className="main-view justify-content-md-center">
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ));
-            }}
-          />
-          <Route
-            path="/movies/:movieId"
-            render={({ match }) => {
-              return (
-                <Col md={8}>
-                  <MovieView
-                    movie={movies.find((m) => m._id === match.params.movieId)}
-                  />
-                </Col>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/genres/:Genres"
-            render={({ match }) => {
-              if (movies.length === 0) return <div className="main-view" />;
-              return (
-                <Col md={8}>
-                  <GenreView
-                    genre={movies.find((m) => m.Genres === match.params.Genres)}
-                  />
-                </Col>
-              );
-            }}
-          />
-          <Route exact path="/register"
-          render={
-              <div>
-            <RegistrationView/>
-            </div>
-          }
-          />
-        </Row>
-      </Router>
+        <MovieView/>
     );
   }
 }
+*/

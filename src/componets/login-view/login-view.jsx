@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { RegistrationView } from "../registration-view/user-registration";
 import { Link } from "react-bootstrap";
+import { Router } from "react-router-dom";
 
 //import "../login-view/login-view.scss";
 
@@ -42,15 +43,6 @@ export function LoginView(props) {
                 <Card.Title style={{ textAlign: "center" }}>
                   <h1> Login </h1>
                 </Card.Title>
-                <Card.Subtitle style={{ textAlign: "center" }}>
-                  <p>
-                    {" "}
-                    Don't have an account with us yet? Sign up{" "}
-                    <Link to={"../registration-view/user-registration"}>
-                      <Button variant="link"> Here </Button>
-                    </Link>
-                  </p>
-                </Card.Subtitle>
                 <Form>
                   <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>

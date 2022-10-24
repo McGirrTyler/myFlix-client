@@ -12,7 +12,7 @@ export class Navigation extends React.Component {
         <Container>
           <Navbar.Brand href="">MovieVerse</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="./componets/main-view/main-view">Explore</Nav.Link>
+            <Nav.Link href="/">Explore</Nav.Link>
             <Nav.Link href="#features">Universes</Nav.Link>
             <Nav.Link href="#pricing">MyProfile</Nav.Link>
             <Form className="d-flex">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export class MovieView extends React.Component {
   render() {
@@ -23,7 +24,7 @@ export class MovieView extends React.Component {
           <span className="value">{movie.Description}</span>
         </div>
         <div className="movie-genres">
-      <Link to={`/genres/${Genres._id}`}>
+      <Link to="/genres/:Genres">
         <Button variant="link">
           <span className="label">Genres: </span>
           <span className="value">{movie.Genres + " "}</span>
