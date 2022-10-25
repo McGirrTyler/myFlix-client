@@ -100,7 +100,13 @@ export class MainView extends React.Component {
 
     return (
       <>
-        <button onClick={() => { this.onLoggedOut() }}>Logout</button>
+        <button
+          onClick={() => {
+            this.onLoggedOut();
+          }}
+        >
+          Logout
+        </button>
         <Router>
           <Row className="main-view justify-content-md-center">
             <Route
@@ -142,15 +148,7 @@ export class MainView extends React.Component {
                 );
               }}
             />
-            <Route
-              exact
-              path="/register"
-              render={
-                <div>
-                  <RegistrationView />
-                </div>
-              }
-            />
+            <Route exact path="/register" render={<RegistrationView />} />
           </Row>
         </Router>
       </>

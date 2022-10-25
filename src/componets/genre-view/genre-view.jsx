@@ -11,6 +11,13 @@ import { Link } from "react-router-dom";
 
 export class GenreView extends React.Component {
   render() {
-    return <div>Hello World</div>;
+    return (
+      <div>
+        <h1> Hello World </h1>
+        <Link to={"/"}>
+          <Button variant="link">Back</Button>
+        </Link>
+      </div>
+    );
   }
 }
